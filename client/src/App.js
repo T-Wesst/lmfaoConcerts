@@ -84,10 +84,20 @@ export default class App extends Component {
                       <Media.Body>
                         <h5>{event.name}</h5>
                         <p>
+                          <strong>Status Code</strong> {''}
                           {event.dates.status.code}
+                          <strong>Genre</strong> {''}
                           {event.classifications[0].genre.name}
+                          <strong>Start Date</strong> {''}
                           {event.dates.start.dateTime}
+                          <strong>Remaining Tickets</strong> {''}
+                          {
+                            event._embedded.attractions[0].upcomingEvents
+                              .ticketmaster
+                          }
+                          <strong>Venue Information</strong>
                           {/* {event._embedded} */}
+                          <strong>Event Info</strong> {''}
                           {event.info}
                         </p>
                         <Button
